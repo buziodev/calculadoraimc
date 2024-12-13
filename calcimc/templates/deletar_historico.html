@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Aferição</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Deletar Aferição</h1>
+        <p>Tem certeza de que deseja deletar esta aferição?</p>
+        <p><strong>Peso:</strong> {{ historico.peso }} kg</p>
+        <p><strong>Altura:</strong> {{ historico.altura }} m</p>
+        <p><strong>IMC:</strong> {{ historico.imc }}</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Deletar</button>
+            <a href="{% url 'historico' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>
